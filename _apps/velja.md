@@ -12,6 +12,16 @@ Open links in a specific browser or a matching native app. Easily switch between
 
 <br>
 
+### Non-App Store version
+
+A special version for users that cannot access the App Store. It won't receive updates.
+
+[Download](https://dsc.cloud/sindresorhus/Velja-1.10.1-1661932791) *(1.10.1)*
+
+*Requires macOS 12 or later*
+
+<br>
+
 <h3 id="help">Help</h3>
 
 Please help out by starring these Chrome issues which would help Velja users:
@@ -23,17 +33,23 @@ Please help out by starring these Chrome issues which would help Velja users:
 
 <h3 id="tips">Tips</h3>
 
-#### Open multiple URLs
-
-If you have a document with many URLs you want to open. Select them, right-click, go to “Services”, and click “Open URLs with Velja”.
-
-*You may have to enable the service in “System Preferences › Keyboard › Shortcuts › Services”.*
-
 #### Prompt
 
 Instead of showing the browser prompt by default, you could make it the alternative browser, which would make it show when you hold the <kbd>Fn</kbd> key while clicking a link.
 
 You could also make a custom rule and select `Prompt` as the browser. For example, you could only show the prompt when clicking links in the Slack app.
+
+#### Prompt shortcuts
+
+While showing the browser prompt, you can press <kbd>Option</kbd> to show buttons to copy or share the link. Or press <kbd>Shift</kbd> or <kbd>Command+C</kbd> to quickly copy the link.
+
+Press <kbd>Option+Tab</kbd>/<kbd>Shift+Option+Tab</kbd> or arrow keys to cycle through browsers. Press <kbd>Return</kbd> or <kbd>Space</kbd> to select one.
+
+#### Copy URL
+
+See the above tip.
+
+You can also have “copy URL” as a browser choice in the prompt by installing [this app](https://github.com/sindresorhus/Copy-URL).
 
 #### Open links clicked in a specific app in a specific browser
 
@@ -45,9 +61,45 @@ For example, to open all links you click in Slack in Chrome:
 - Create a new “Source Apps” matcher and select the app you want. For example, Slack.
 - Click “Save”.
 
-#### Prompt shortcuts
+#### Open link in private/incognito window
 
-While showing the browser prompt, you can press <kbd>Option</kbd> to show buttons to copy or share the link. Or press <kbd>Shift</kbd> or <kbd>Command+C</kbd> to quickly copy the link.
+For Safari, [click here](https://github.com/sindresorhus/Safari-Private).
+
+This is especially useful in combination with custom rules. For example, you could make a rule to open links to certain websites in a private window.
+
+*Support for other browsers is planned. Firefox support is not possible until Firefox supports [Web Extensions Manifest v3](https://blog.mozilla.org/addons/2022/05/18/manifest-v3-in-firefox-recap-next-steps/).*
+
+#### Open multiple URLs
+
+If you have a document with many URLs you want to open. Select them, right-click, go to “Services”, and click “Open URLs with Velja”.
+
+*You may have to enable the service in “System Preferences › Keyboard › Shortcuts › Services”.*
+
+#### Browser extensions
+
+- Safari — Built-in. Just enable it in the Safari settings.
+- [Chrome](https://chrome.google.com/webstore/detail/velja/gpipdgcamiclkcomcnogmlfpalggmcmk) — Also works in Edge, Brave, and other Chromium-based browsers.
+- *Firefox support is planned, but will take a while.*
+
+<br>
+
+<h3 id="scripting">Scripting</h3>
+
+The app can be automated using the Shortcuts app or with a custom URL scheme.
+
+#### Custom URL scheme
+
+You can open a URL using Velja from any tool that support opening a URL. This includes, a website, Bash, Node.js, Python, Swift, etc.
+
+For example, in your terminal:
+
+```sh
+open --background 'velja:open?url=https%3A%2F%2Fsindresorhus.com&prompt'
+```
+
+Leave out `&prompt` to not show the browser prompt.
+
+*Don't forget to [URL encode](https://www.urlencoder.org) the value for the `url=` search parameter. For example, using [this](https://gist.github.com/cdown/1163649) Bash function.*
 
 <br>
 
@@ -67,9 +119,11 @@ You may also have enabled the “Hide menu bar icon” setting, which hides the 
 
 **I clicked a link in a browser**
 
-Velja is not able to handle links clicked inside a browser. You can either right-click the link and use the share extension \* or copy the link and then click “Open URL from Clipboard” in the Velja menu.
+Velja is not able to handle links clicked inside a browser. However, Velja comes with a Safari extension which you can enable in the Safari settings. You can then click the toolbar icon to open the current page with Velja or right-click a link to open it with Velja. There is also a [Chrome extension](https://chrome.google.com/webstore/detail/velja/gpipdgcamiclkcomcnogmlfpalggmcmk) which also works in Edge, Brave, and other Chromium-based browsers. (Firefox support is planned, but will take a while)
 
-\* Chrome (and Edge, Brave, etc) does not have a “Share” item in its context menu. Please [star this issue](https://bugs.chromium.org/p/chromium/issues/detail?id=916291).
+If you use a browser where Velja does not have a browser extension, you could also right-click the link and use the share extension \* or copy the link and then click “Open URL from Clipboard” in the Velja menu.
+
+\* *Chrome (and Edge, Brave, etc) does not have a “Share” item in its context menu. Please [star this issue](https://bugs.chromium.org/p/chromium/issues/detail?id=916291).*
 
 Velja also comes with a [system service](https://www.computerworld.com/article/2476298/os-x-a-quick-guide-to-services-on-your-mac.html). However, neither Safari ([issue](https://github.com/feedback-assistant/reports/issues/304)) or Chrome ([issue](https://bugs.chromium.org/p/chromium/issues/detail?id=1325557)) correctly sends links to a system service, so it cannot be used for this purpose.
 
@@ -85,8 +139,12 @@ Make sure it's none of the above cases. Also make sure you have added a “Sampl
 
 Removing tracking parameters improve privacy and also make URLs more aesthetically pleasing. Tracking parameters are used by many websites to track your browsing activity across websites. [Read more.](https://en.wikipedia.org/wiki/UTM_parameters)
 
+Velja supports 200+ common tracking parameters (e.g. Google UTM) and it has special support for removing tracking from links to Twitter, Facebook, and TikTok.
+
 Before: `https://foo.com?utm_content=buffercf3b2&utm_source=snapchat.com`\
 After: `https://foo.com`
+
+Did you know that if you click a TikTok link that someone shared with you, they will be able to see that you watched it? Velja anonymizes TikTok links so that you will not be tracked.
 
 <a id="tracking-parameters-not-removed"></a>
 #### Tracking parameters are not removed
@@ -97,14 +155,12 @@ If the clicked/copied link is a short URL, Velja is only able to remove the trac
 
 The app contains a list of tracking parameters to remove, but there may be site-specific tracking parameters it doesn't know about. If you encounter any tracking parameters not being removed, [let me know](https://sindresorhus.com/feedback/?product=Velja&referrer=Website-FAQ) and I'll add support for them.
 
-#### Can you add a visual picker that shows when clicking a link?
-
-This is planned.
-
 <a id="builtin-apps-requests"></a>
 #### Can you add another app to the “Apps” preferences?
 
 I'm happy to consider requests. [Submit here.](https://sindresorhus.com/feedback/?product=Velja&referrer=Website-FAQ)
+
+**Note:** This is about opening a link in a specific app. If you want to open a link **from** a specific app, just use the rules feature (it supports any app).
 
 However, some apps are not possible:
 - Slack
@@ -163,6 +219,7 @@ Velja benefits:
 - Removes tracking parameters on clicked and copied links
 - You can open copied links from the menu bar menu
 - You can press a keyboard shortcut to use an alternative browser for a specific link
+- Open link in private Safari window
 - Available in the App Store
 - Sandboxed (more secure)
 - Shortcuts support
@@ -172,7 +229,6 @@ Velja benefits:
 
 Choosy benefits:
 
-- Browser extension
 - More options for custom rules
 
 <a id="bumpr"><a>
@@ -192,6 +248,7 @@ Velja benefits:
 - You can quickly switch the primary browser
 - You can press a keyboard shortcut to use an alternative browser for a specific link
 - Setting to hide the menu bar icon
+- Open link in private Safari window
 - Shortcuts support
 - Handoff support
 - Services support
@@ -199,7 +256,6 @@ Velja benefits:
 
 Bumpr benefits:
 
-- Browser extension
 - Supports configuring primary email app
 
 <a id="openin"><a>
@@ -215,12 +271,14 @@ Velja benefits:
 - You can open copied links from the menu bar menu
 - You can quickly switch the primary browser
 - You can press a keyboard shortcut to use an alternative browser for a specific link
+- Open link in private Safari window
+- Browser extensions
 - Shortcuts support
 - Services support
 
 OpenIn benefits:
 
-- Supports configuring the primary app for more types, like email clients.
+- Supports configuring the primary app for more types, like email clients
 
 <a id="browserosaurus"><a>
 #### How does it compare to [Browserosaurus](https://github.com/will-stone/browserosaurus)?
@@ -244,6 +302,8 @@ Velja benefits:
 - You can press a keyboard shortcut to use an alternative browser for a specific link
 - Finds new browsers automatically (Browsersaurus has to manually scan for new browsers)
 - Setting to hide the menu bar icon
+- Open link in private Safari window
+- Browser extensions
 - Shortcuts support
 - Handoff support
 - Services support

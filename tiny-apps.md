@@ -18,3 +18,7 @@ Check what content an app provides to services in the “Services” menu. This 
 ## [Copy URL](https://github.com/sindresorhus/copy-url)
 
 Adds copy functionality to browser picker apps.
+
+## [Safari Private](https://github.com/sindresorhus/Safari-Private)
+
+Open the given URL in a private Safari window.

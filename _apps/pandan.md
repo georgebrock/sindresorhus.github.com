@@ -8,6 +8,18 @@ app_store_app_id: 1569600264
 mac_app_store_url: https://apps.apple.com/app/id1569600264
 ---
 
+<br>
+
+### Non-App Store version
+
+A special version for users that cannot access the App Store. It won't receive updates.
+
+[Download](https://dsc.cloud/sindresorhus/Pandan-1.12.2-1662058445) *(1.12.2)*
+
+*Requires macOS 12 or later*
+
+<br>
+
 ### Older versions
 
 - [Last macOS 11 compatible version](https://github.com/sindresorhus/meta/files/8003835/Pandan.1.9.1.-.macOS.11.zip) *(1.9.1)*

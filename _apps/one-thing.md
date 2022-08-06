@@ -30,6 +30,16 @@ However, what you use this space for is really up to you.
 
 <br>
 
+### Non-App Store version
+
+A special version for users that cannot access the App Store. It won't receive updates.
+
+[Download](https://dsc.cloud/sindresorhus/One-Thing-1.8.0-1661784123) *(1.8.0)*
+
+*Requires macOS 12 or later*
+
+<br>
+
 <h3 id="tips">Tips</h3>
 
 - Press <kbd>return</kbd>/<kbd>esc</kbd> or click the menu bar item to close the edit window.
@@ -72,6 +82,8 @@ open --background 'one-thing:?text=Exercise'
 ```
 
 *Don't forget to [URL encode](https://www.urlencoder.org) the value for the `text=` search parameter. For example, using [this](https://gist.github.com/cdown/1163649) Bash function.*
+
+<br>
 
 <h3 id="faq">Frequently Asked Questions</h3>
 

@@ -10,6 +10,16 @@ mac_app_store_url: https://apps.apple.com/app/id1596706466
 
 <br>
 
+### Non-App Store version
+
+A special version for users that cannot access the App Store. It won't receive updates.
+
+[Download](https://dsc.cloud/sindresorhus/Speediness-1.4.2-1661934168) *(1.4.2)*
+
+*Requires macOS 12 or later*
+
+<br>
+
 <h3 id="faq">Frequently Asked Questions</h3>
 
 #### I have a feature request, bug report, or some feedback
@@ -65,7 +75,7 @@ Open the Shortcuts app, create a new shortcut, and then drag the “Get Internet
 <a id="ios"></a>
 #### Can you add support for iOS?
 
-This is unfortunately not possible at this time as the app relies on the built-in [`networkQuality` command-line tool](https://support.apple.com/en-gb/HT212313), which does not exist on iOS. Someone would have to reverse-engineer `networkQuality` for me to be able to support iOS.
+This is unfortunately not possible at this time as the app relies on the built-in [`networkQuality` command-line tool](https://support.apple.com/en-gb/HT212313), which does not exist on iOS. Someone would have to implement the [“Responsiveness under Working Conditions” RFC](https://github.com/network-quality/draft-ietf-ippm-responsiveness/blob/master/draft-ietf-ippm-responsiveness.txt) in Swift. [Reference implementation in Go.](https://github.com/network-quality/goresponsiveness) Let me know if you end up making a Swift package for this.
 
 #### Is the app native?
 

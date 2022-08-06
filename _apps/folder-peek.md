@@ -10,6 +10,16 @@ mac_app_store_url: https://apps.apple.com/app/id1615988943
 
 <br>
 
+### Non-App Store version
+
+A special version for users that cannot access the App Store. It won't receive updates.
+
+[Download](https://dsc.cloud/sindresorhus/Folder-Peek-1.4.0-1661933714) *(1.4.0)*
+
+*Requires macOS 12 or later*
+
+<br>
+
 <h3 id="guide">Guide</h3>
 
 Folder Peek lets you put one or more folders in the menu bar.
