@@ -97,14 +97,14 @@ None -->
 <a href="https://www.gitpod.io/?utm_campaign=sindresorhus&utm_medium=referral&utm_content=awesome&utm_source=blog" class="sponsor" rel="nofollow" style="position:relative;left:-5px">
 	<img src="/assets/thanks/gitpod-logo.svg" width="340" alt="Gitpod">
 </a>
-<a href="https://keygen.sh" class="sponsor" rel="nofollow" style="position:relative;left:-3px">
-	<img src="/assets/thanks/keygen-logo.svg" width="340" alt="Keygen">
-</a>
 <a href="https://getstream.io/chat/sdk/ios/?utm_source=Github&utm_medium=Github_Repo_Content_Ad&utm_content=Developer&utm_campaign=Github_Jan2022_iOSChatSDK&utm_term=Sindresorhus" class="sponsor" rel="nofollow" style="position:relative;left:-3px;margin-top:20px">
 	<img src="/assets/thanks/stream-logo.svg" width="360" alt="Stream">
 </a>
 <a href="https://www.useanvil.com/?utm_source=sindresorhus" class="sponsor" rel="nofollow" style="position:relative;left:-3px;margin-top:20px">
 	<img src="/assets/thanks/anvil-logo-light.svg" width="310" alt="Anvil">
+</a>
+<a href="https://sizzy.co?ref=sindre" class="sponsor" rel="nofollow" style="position:relative;left:-25px;margin-top:0px">
+	<img src="/assets/thanks/sizzy-logo.png" width="400" alt="Sizzy">
 </a>
 
 ## Silver sponsor <span class="reward-price">[$100/month](https://www.patreon.com/bePatron?c=95723&rid=1917312)</span>
