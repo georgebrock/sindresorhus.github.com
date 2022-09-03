@@ -103,7 +103,7 @@ None -->
 <a href="https://www.useanvil.com/?utm_source=sindresorhus" class="sponsor" rel="nofollow" style="position:relative;left:-3px;margin-top:20px">
 	<img src="/assets/thanks/anvil-logo-light.svg" width="310" alt="Anvil">
 </a>
-<a href="https://sizzy.co?ref=sindre" class="sponsor" rel="nofollow" style="position:relative;left:-25px;margin-top:0px">
+<a href="https://sizzy.co" class="sponsor" rel="nofollow" style="position:relative;left:-25px;margin-top:0px">
 	<img src="/assets/thanks/sizzy-logo.png" width="400" alt="Sizzy">
 </a>
 

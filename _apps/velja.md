@@ -75,6 +75,16 @@ If you have a document with many URLs you want to open. Select them, right-click
 
 *You may have to enable the service in “System Preferences › Keyboard › Shortcuts › Services”.*
 
+#### Open link in an website-wrapper app
+
+Let's say you have generated a website wrapper app for facebook.com using an app like [Unite](https://www.bzgapps.com/unite) or [Coherence](https://www.bzgapps.com/coherence) and you want all links to Facebook to go to this app instead of your browser:
+
+- Open the Velja settings and go to the “Rules” pane.
+- Create a new rule and give it a name.
+- Select the website wrapper app in the “Open in” field.
+- Create a new “URL Matchers” matcher and write “facebook.com” in the the “Match” field.
+- Click “Save”.
+
 #### Browser extensions
 
 - Safari — Built-in. Just enable it in the Safari settings.
@@ -158,7 +168,11 @@ The app contains a list of tracking parameters to remove, but there may be site-
 <a id="builtin-apps-requests"></a>
 #### Can you add another app to the “Apps” preferences?
 
-I'm happy to consider requests. [Submit here.](https://sindresorhus.com/feedback/?product=Velja&referrer=Website-FAQ)
+I'm happy to consider requests (but read the below first). [Submit here.](https://sindresorhus.com/feedback/?product=Velja&referrer=Website-FAQ)
+
+*If this is about opening a specific website (for example, Google Sheets) in a specific browser, you should use the rules feature instead (the “Rules” tab in the settings). You can easily make a rule for any website.*
+
+*If this is about opening a specific website like Facebook in an app-wrapped website generated with something like Unite or Coherence, it's better to just add support yourself. You can use the rules feature for this. For example, write “facebook.com” as the domain and select the website-wrapper app you generated.*
 
 **Note:** This is about opening a link in a specific app. If you want to open a link **from** a specific app, just use the rules feature (it supports any app).
 
@@ -167,6 +181,8 @@ However, some apps are not possible:
   + *The Slack app does not accept a normal deep link (example: `https://team-name.slack.com/archives/CKPE4C/p161643063559`). It only accepts a special Slack-specific URL. To be able to convert a normal Slack link to one that the desktop app accepts, we would need get the team ID from the Slack API and that requires authentication. It's simply not feasible to do this. __Please do send feedback to Slack asking them to accept a normal link, like most other apps support.__*
 - Cisco Webex
   + *[Comment here](https://github.com/johnste/finicky/discussions/228) if you know how to do this.*
+- [MURAL](https://mural.co)
+  + The app has no support for opening URLs from the web version.
 
 If your favorite service is in the above list, I would recommend contacting them and asking them to support opening a link directly in their app. That means being able to run the command `open -a AppName https://foo.com/link-to-project-or-meeting`.
 
